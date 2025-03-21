@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Добавлено для корректного расчёта размеров */
+    font-family: 'Oswald', sans-serif;
+}
+
+body {
+    background-color: #24333C !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh; /* Добавлено для корректного отображения на iOS */
+}/* Стили для иконки пользователя */
+.user-icon {
+    position: fixed;
+    top: 45px;
+    right: 20px;
+    cursor: pointer;
+    z-index: 1000;
+}
+
+.user-icon svg {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.user-icon:hover svg {
+    transform: scale(1.1);
+}
+
+/* Стили для скрытого блока личного кабинета */
+.user-menu {
+    position: fixed;
+    top: -100%; /* Меню скрыто за верхней границей экрана */
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(36, 51, 60, 0.95); /* Полупрозрачный фон, как в body */
+    transition: top 0.5s ease;
+    z-index: 999;
+}
+
+.user-menu.active {
+    top: 0; /* Меню появляется сверху */
+}
+
+.user-menu-content {
+    background-color: #24333C; /* Основной цвет фона, как в body */
+    padding: 20px;
+    border-radius: 0 0 10px 10px; /* Закругление только снизу */
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-menu-content p {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 20px;
+    color: #FF570A; /* Оранжевый цвет, как в #first-txt-info */
+}
+
+.user-menu-content a {
+    background-color: #FF570A;
+    display: block;
+    color: rgb(0, 0, 0); /* Белый цвет текста */
+    text-decoration: none;
+    padding: 10px 0;
+    transition: background-color 0.3s ease;
+    font-size: 1.3em; /* Размер шрифта, как в .btn-block a */
+    border-radius: 10px; /* Закругление углов, как в .btn-block a */
+    margin: 5px 0; /* Отступы между элементами */
+    box-shadow: 0 0 10px 5px rgba(255, 123, 0, 0.534);
+}
+
+.user-menu-content a:hover {
+    background-color: #ffffff; /* Оранжевый цвет при наведении */
+    color: black; /* Цвет текста при наведении */
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.534); /* Тень, как в .btn-block a:hover */
+}
+
+.user-menu-content a:active {
+    transform: scale(0.95); /* Анимация при нажатии, как в .btn-block a:active */
+}
+
+#greeting {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+#subscription {
+    color: white;
+    font-size: 1em;
+    margin-bottom: 20px;
+}
+
+#subscription-info {
+    margin-bottom: 10px;
+}
+
+.Info-block p {
+    text-align: center;
+}
+
+.Info-block a {
+    width: 100%;
+    height: 5vh;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    margin: 10px 0; /* Добавлено для отступов */
+}
+
+.Info-block a:hover {
+    background-color: #FF570A;
+    color: rgb(255, 255, 255);
+}
+
+#first-txt-info {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #FF570A;
+}
+
+#second-txt-info {
+    color: white;
+}
+
+.btn-block {
+    width: 80%;
+    height: auto; /* Изменено для адаптивности */
+    display: flex;
+    flex-direction: column;
+    gap: 10px; /* Уменьшено для компактности */
+    padding: 20px 0; /* Добавлено для отступов */
+}
+
+.btn-block p {
+    color: white;
+    font-size: 1.5em;
+}
+
+#second-txt-btn-block {
+    padding-top: 10%;
+}
+
+.btn-block a {
+    width: 100%;
+    height: 7vh;
+    background-color: #FF570A;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    font-size: 1.3em;
+    box-shadow: 0 0 10px 5px rgba(255, 123, 0, 0.534);
+    margin: 5px 0; /* Добавлено для отступов */
+}
+
+.btn-block a:hover {
+    background-color: white;
+    box-shadow: 0 0 10px 5px rgba(255, 255, 255, 0.534);
+    transform: scale(1.05);
+}
+
+.btn-block a:active {
+    transform: scale(0.95);
+}
+
+.block-1,
+.block-2,
+.block-3,
+.block-4 {
+    width: 10%;
+    height: 10vh;
+    margin: 10px 0; /* Добавлено для отступов */
+}
+
+.block-1 {
+    background-color: #081724;
+}
+
+.block-2 {
+    background-color: #FF570A;
+}
+
+.block-3 {
+    background-color: #24333C;
+}
+
+@media only screen and (max-width: 768px) {
+    .logo-box-header {
+        width: 17%;
+        height: 6vh;
+        border-radius: 100%;
+    }
+
+    .name-box-header {
+        width: 60%;
+        height: 5vh;
+    }
+
+    .Info-block,
+    .btn-block {
+        width: 90%; /* Увеличено для мобильных устройств */
+    }
+
+    .btn-block a {
+        height: 6vh; /* Уменьшено для мобильных устройств */
+    }
+}
