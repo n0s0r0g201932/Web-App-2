@@ -1,0 +1,407 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: Wadik;
+    src: url(./fonts/Wadik.otf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Wadik;
+}
+
+body {
+    background-color: #081724 !important;
+    color: white;
+    min-height: 100vh;
+    position: relative;
+}
+
+/* Верхний блок */
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #081724;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    z-index: 1001;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #FF570A;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: auto;
+}
+
+.logo {
+    width: 180px;
+    height: 60px;
+    background-image: url(./img/logo.png);
+    background-position: left center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Иконка пользователя */
+.user-icon {
+    cursor: pointer;
+    z-index: 1000;
+    margin-left: auto;
+}
+
+.user-icon svg {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.user-icon:hover svg {
+    transform: scale(1.1);
+}
+
+/* Личный кабинет */
+.user-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #081724c5;
+    transition: top 0.5s ease;
+    z-index: 1002;
+}
+
+.user-menu.active {
+    top: 0;
+}
+
+.user-menu-content {
+    background-color: #081724;
+    padding: 20px;
+    margin-top: 80px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #1a2a3a;
+    overflow: hidden;
+    border: 3px solid #FF570A;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+}
+
+.user-name {
+    color: #FF570A;
+    font-size: 1.4em;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+}
+
+.user-menu-content p {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #081724;
+}
+
+/* Блоки с треугольным низом */
+.info-blocks-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.info-block-triangle {
+    background-color: #FF570A;
+    padding: 10px;
+    text-align: center;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    word-break: break-word;
+    box-sizing: border-box;
+    position: relative;
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 80%,
+        50% 100%,
+        0% 80%
+    );
+}
+
+.info-block-triangle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(255, 87, 10, 0.4);
+}
+
+.info-title {
+    color: #ffffff;
+    font-size: 0.85em;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    padding: 0 5px;
+    width: 100%;
+    z-index: 1;
+}
+
+.info-value {
+    color: #081724;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.2;
+    padding: 0 5px;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Кнопки меню */
+.user-menu-buttons {
+    margin-top: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    padding: 0 15px;
+}
+
+.menu-btn {
+    background-color: #FF570A;
+    color: #000;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: block;
+}
+
+.menu-btn:hover {
+    background-color: #fff;
+    transform: scale(1.02);
+}
+
+.exit-btn {
+    margin-top: 20px;
+    background-color: #1a2a3a;
+    color: #FF570A;
+    font-weight: bold;
+}
+
+.exit-btn:hover {
+    background-color: #fff;
+    color: #FF570A;
+}
+
+/* Основной контент */
+.content-wrapper {
+    width: 100%;
+    max-width: 600px;
+    margin: 120px auto 40px;
+    padding: 0 20px;
+    display: flex;
+    justify-content: center;
+    position: relative;
+    z-index: 1;
+}
+
+.subscription-container {
+    width: 100%;
+    text-align: center;
+    padding: 30px;
+    background-color: #081724c5;
+    border-radius: 15px;
+    box-shadow: 0 5px 25px rgba(0, 0, 0, 0.5);
+    margin-top: 40px;
+}
+
+.subscription-container h1 {
+    font-size: 1.8em;
+    margin-bottom: 30px;
+    color: #FF570A;
+}
+
+.subscription-info h2 {
+    color: gray;
+    font-size: 1.3em;
+    margin-bottom: 20px;
+    line-height: 1.4;
+}
+
+.subscription-price {
+    font-size: 2.5em;
+    font-weight: bold;
+    color: #FF570A;
+    margin: 25px 0;
+}
+
+.email-section {
+    margin: 30px 0;
+}
+
+.email-checkbox {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 15px;
+}
+
+.checkbox-input {
+    width: 30px;
+    height: 18px;
+    margin-right: 10px;
+    accent-color: #FF570A;
+    cursor: pointer;
+}
+
+.checkbox-label {
+    font-size: 0.9em;
+    color: #aaa;
+    cursor: pointer;
+}
+
+.email-input-container {
+    width: 100%;
+    margin-top: 10px;
+    transition: all 0.3s ease;
+}
+
+.email-input {
+    width: 100%;
+    padding: 12px 15px;
+    background-color: #1a2a3a;
+    border: 1px solid #FF570A;
+    border-radius: 5px;
+    color: white;
+    font-size: 1em;
+    text-align: center;
+    transition: all 0.3s ease;
+}
+
+.email-input:focus {
+    outline: none;
+    border-color: white;
+}
+
+.subscription-date {
+    margin: 25px 0;
+    font-size: 0.9em;
+    color: #aaa;
+}
+
+.payment-button {
+    width: 100%;
+    padding: 15px;
+    background-color: #FF570A;
+    color: black;
+    border: none;
+    border-radius: 5px;
+    font-size: 1.2em;
+    font-weight: bold;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    margin-top: 20px;
+}
+
+.payment-button:hover {
+    background-color: white;
+    transform: scale(1.02);
+}
+
+.payment-button:active {
+    transform: scale(0.98);
+}
+
+#change-color-sub {
+    color:#FF570A;
+}
+
+/* Адаптация для мобилок */
+@media only screen and (max-width: 768px) {
+    .top-header {
+        height: 80px;
+        padding: 0 15px;
+    }
+    
+    .logo {
+        width: 150px;
+        height: 150px;
+        transform: translate(-55px, 0px);
+    }
+
+    .user-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .content-wrapper {
+        margin-top: 100px;
+        padding: 0 15px;
+    }
+    
+    .subscription-container {
+        margin-top: 20px;
+        padding: 20px;
+    }
+    
+    .subscription-container h1 {
+        font-size: 1.5em;
+    }
+    
+    .subscription-info h2 {
+        font-size: 1.1em;
+    }
+    
+    .subscription-price {
+        font-size: 2em;
+    }
+    
+    .info-blocks-container {
+        gap: 10px;
+    }
+    
+    .info-block-triangle {
+        width: 135px;
+        height: 160px;
+        padding: 8px;
+    }
+    
+    .info-title {
+        font-size: 0.75em;
+    }
+    
+    .info-value {
+        font-size: 0.9em;
+    }
+}

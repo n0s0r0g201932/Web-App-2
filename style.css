@@ -1,0 +1,432 @@
+@import url('https://fonts.googleapis.com/css2?family=Raleway:ital,wght@0,100..900;1,100..900&display=swap');
+@font-face {
+    font-family: Wadik;
+    src: url(./fonts/Wadik.otf);
+}
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Wadik;
+}
+
+body {
+    background-color: #081724 !important;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    min-height: 100vh;
+    padding-top: 100px;
+}
+
+/* Верхний блок */
+.top-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 90px;
+    background-color: #081724;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 25px;
+    z-index: 1001;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.4);
+    border-bottom: 2px solid #FF570A;
+}
+
+.logo-container {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    margin-right: auto;
+}
+
+.logo {
+    width: 180px;
+    height: 60px;
+    background-image: url(./img/logo.png);
+    background-position: left center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/* Иконка пользователя */
+.user-icon {
+    cursor: pointer;
+    z-index: 1000;
+    margin-left: auto;
+}
+
+.user-icon svg {
+    width: 30px;
+    height: 30px;
+    transition: transform 0.3s ease;
+}
+
+.user-icon:hover svg {
+    transform: scale(1.1);
+}
+
+/* Личный кабинет */
+.user-menu {
+    position: fixed;
+    top: -100%;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #081724c5;
+    transition: top 0.5s ease;
+    z-index: 999;
+}
+.user-menu-buttons {
+    display: flex;
+    flex-direction: column;
+    gap: 12px;
+    margin-top: 25px;
+    padding: 0 15px;
+}
+.menu-btn {
+    background-color: #FF570A;
+    color: #000;
+    text-decoration: none;
+    padding: 12px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    text-align: center;
+    transition: all 0.3s ease;
+    width: 100%;
+    display: block;
+    
+}
+.menu-btn:hover {
+    background-color: #fff;
+    transform: scale(1.02);
+    
+}
+.exit-btn {
+    margin-top: 20px;
+    background-color: #1a2a3a;
+    color: #FF570A;
+    font-weight: bold;
+}
+
+.exit-btn:hover {
+    background-color: #fff;
+    color: #FF570A;
+}
+.user-menu.active {
+    top: 0;
+}
+
+.user-menu-content {
+    background-color: #081724;
+    padding: 20px;
+    margin-top: 80px;
+    border-radius: 0 0 10px 10px;
+    text-align: center;
+    width: 100%;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+}
+.user-profile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 20px;
+}
+.user-avatar {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    background-color: #1a2a3a;
+    overflow: hidden;
+    border: 3px solid #FF570A;
+    margin-bottom: 10px;
+    background-size: cover;
+    background-position: center;
+}
+.user-name {
+    color: #FF570A;
+    font-size: 1.4em;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+}
+.user-menu-content p {
+    font-size: 0.8em;
+    font-weight: bold;
+    color: #081724;
+}
+
+/* Обновленные стили для блоков с треугольным низом */
+.info-blocks-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+    margin: 20px 0;
+    flex-wrap: wrap;
+}
+
+.info-block-triangle {
+    background-color: #FF570A;
+    padding: 10px;
+    text-align: center;
+    width: 140px;
+    height: 140px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    transition: all 0.3s ease;
+    overflow: hidden;
+    word-break: break-word;
+    box-sizing: border-box;
+    position: relative;
+    clip-path: polygon(
+        0% 0%,
+        100% 0%,
+        100% 80%,
+        50% 100%,
+        0% 80%
+    );
+}
+
+.info-block-triangle:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 15px rgba(255, 87, 10, 0.4);
+}
+
+.info-title {
+    color: #ffffff;
+    font-size: 0.85em;
+    margin-bottom: 8px;
+    line-height: 1.2;
+    padding: 0 5px;
+    width: 100%;
+    z-index: 1;
+}
+
+.info-value {
+    color: #081724;
+    font-size: 1em;
+    font-weight: bold;
+    line-height: 1.2;
+    padding: 0 5px;
+    width: 100%;
+    z-index: 1;
+}
+
+/* Обновленные стили для кнопки выхода */
+.user-menu-buttons {
+    margin-top: 30px;
+    display: flex;
+    justify-content: center;
+}
+
+.user-menu-buttons a {
+    font-family: Railway;
+    background-color: #FF570A;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    padding: 10px 25px;
+    border-radius: 5px;
+    font-size: 1.1em;
+    transition: all 0.3s ease;
+}
+
+.user-menu-buttons a:hover {
+    background-color: #ffffff;
+    transform: scale(1.05);
+}
+
+/* Основной контент */
+.Info-block {
+    height: 20vh;
+}
+
+#greeting {
+    color: white;
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.Info-block p {
+    text-align: center;
+}
+
+.Info-block a {
+    width: 100%;
+    height: 5vh;
+    background-color: white;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    transition: 0.3s ease;
+    margin: 10px 0;
+}
+
+.Info-block a:hover {
+    background-color: #FF570A;
+    color: rgb(255, 255, 255);
+}
+
+#first-txt-info {
+    text-align: start;
+    padding-top: 40px;
+    font-size: 1.2em;
+    font-weight: bold;
+    color: #ffffff;
+}
+
+#second-txt-info {
+    color: white;
+}
+
+.btn-block {
+    width: 80%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    padding: 20px 0;
+}
+
+.btn-block p {
+    color: white;
+    font-size: 1.2em;
+}
+
+#second-txt-btn-block {
+    padding-top: 10%;
+}
+
+#color-change-btn-block {
+    color: #FF570A;
+}
+
+.btn-block a {
+    font-family: raleway;
+    width: 100%;
+    height: 7vh;
+    background-color: #FF570A;
+    color: rgb(0, 0, 0);
+    text-decoration: none;
+    transition: all 0.3s ease;
+    font-size: 1.3em;
+    margin: 5px 0;
+    position: relative;
+    border-radius: 0;
+    clip-path: polygon(
+        0% 0%,
+        90% 0%,
+        100% 50%,
+        90% 100%,
+        0% 100%
+    );
+    display: flex;
+    align-items: center;
+    padding-left: 30px;
+}
+
+.btn-block a:hover, 
+.btn-block a:focus {
+    background-color: white;
+    transform: scale(1.02) translateX(-5px);
+    clip-path: polygon(
+        0% 0%,
+        92% 0%,
+        102% 50%,
+        92% 100%,
+        0% 100%
+    );
+    outline: none; /* Убираем стандартный outline при фокусе */
+}
+
+
+.btn-block a:active {
+    transform: scale(0.95);
+    background-color: #FF570A; /* Возвращаем оранжевый при нажатии */
+}
+.btn-block a {
+    /* Эти свойства уже есть выше, но важно чтобы они были */
+    background-color: #FF570A;
+    transform: scale(1) translateX(0);
+    clip-path: polygon(
+        0% 0%,
+        90% 0%,
+        100% 50%,
+        90% 100%,
+        0% 100%
+    );
+    
+}
+
+/* Адаптация для мобилок */
+@media only screen and (max-width: 768px) {
+    .top-header {
+        height: 80px;
+        padding: 0 15px;
+    }
+    
+    .logo {
+        width: 150px;
+        height: 150px;
+        transform: translate(-55px, 0px);
+    }
+
+    .user-icon svg {
+        width: 25px;
+        height: 25px;
+    }
+
+    .Info-block,
+    .btn-block {
+        width: 90%;
+    }
+
+    .btn-block a {
+        padding-left: 20px;
+    }
+    
+    .info-blocks-container {
+        gap: 10px;
+    }
+    
+    .info-block-triangle {
+        width: 135px;
+        height: 160px;
+        padding: 8px;
+        clip-path: polygon(
+            0% 0%,
+            100% 0%,
+            100% 80%,
+            50% 100%,
+            0% 80%
+        );
+    }
+    
+    .info-title {
+        font-size: 0.75em;
+        margin-bottom: 6px;
+    }
+    
+    .info-value {
+        font-size: 0.9em;
+    }
+    
+    .user-menu-buttons a {
+        width: auto;
+        height: 40px;
+        font-size: 1em;
+    }
+    
+    body {
+        padding-top: 70px;
+    }
+}
